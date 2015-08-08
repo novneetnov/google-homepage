@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Google Homepage</title>
+	<style>
+		html, body{
+			margin:0px;
+			height: 100%;
+		}
+		#container{
+			position: relative;
+			height: 100%;
+		}
+		#topbar{
+			width: 100%;
+			height: 50px;
+			position:absolute;
+			top: 0;
+		}
+		#menuList{
+			margin:0px;
+			float: right;
+			margin: 15px 22px 0px 0px;
+			padding: 0px;
+		}	
+		.topMenuItem{
+			list-style: none;
+			display: inline;
+			font-size: 0.96em;
+			padding:0px 6px 0px 6px;
+			height: 50%;
+		}
+		a{
+			text-decoration:none;
+			color: black;
+		}	
+		a:hover{
+			text-decoration:underline;	
+		}
+		.menubarText{
+			opacity: 0.80;
+			position: relative;
+			top: -13px;			
+		}
+		.menubarIco{
+			position: relative;
+			top: -4px;
+		}
+		.clear{
+			clear: both;
+		}
+		#content{
+			margin: 0 auto;
+			height: 100%;
+			width: 600px;
+		}
+		#centreArea{
+			position: relative;
+			top: 190px;
+		}
+		#centerLogo img{
+			width: 269px;
+			display: block;
+			margin: auto;
+		}
+		#search{
+			margin: 0 auto;
+			display: block;
+			width: 92%;
+			height: 26px;
+			padding: 0px 10px 0px 10px;
+			font-family: sans-serif;
+			font-size: 15px;
+			border: 1px solid #dcdcdc;
+			background: url(img/mic.png) no-repeat 99.2% 50%;
+			-webkit-transition: all 0s ease-in-out;
+			-moz-transition: all 0s ease-in-out;
+			-ms-transition: all 0s ease-in-out;
+			-o-transition: all 0s ease-in-out;
+		}
+		input[type="text"]:hover{
+			outline: #a0a0a0 solid 1px;
+		}
+		input[type="text"]:focus{
+			box-shadow: 0px 0px 1px 1px #4d90fe;
+			outline: none;
+		}
+		::-webkit-input-placeholder{
+			padding-right: 19px;
+			text-align:right;
+		}
+		input:-moz-placeholder { text-align:right; }
+		#btnDiv{
+			width: 38%;
+			margin: 0 auto;
+		}
+		.btnSearch{
+			height: 30px;	
+			background-color: #F2F2F2;
+			font-family: arial,sans-serif;
+			font-weight: bold;
+			font-size: 0.77em;
+			opacity: 0.70;
+			border: 1px solid #C6C6C6;
+			border-radius: 2px;
+		}
+		.btnSearch:hover{
+			opacity:1;
+			border-1px solid grey;
+		}
+		#footer{
+			clear: both;
+			background-color: #F2F2F2;
+			height: 40px;
+			width: 100%;
+			position:absolute;
+			bottom:0;
+			border-top: 1px solid #E4E4E4;
+		}
+		#leftFooterMenu{
+			float: left;	
+		}
+		#rightFooterMenu{
+			float: right;
+		}
+		#footer div ul{
+			margin: 10px 14px 0px 14px;
+			padding: 0px;
+			position: relative;
+		}		
+		#footer div ul li{
+			list-style: none;
+			display: inline;
+			padding: 0px 14px 0px 14px;
+			font-family: font-family: arial,sans-serif;
+			color: #666;
+			font-size: 0.9em;
+			opacity: 0.7;
+		}
+
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id="topbar">
+		<ul id="menuList">
+			<li class="topMenuItem menubarText" style="opacity: 0.6"><span title="Looking for Google+?Click the Googel Apps Icon to the Right.">novneet<span></li>
+			<li class="topMenuItem menubarText"><a href="https://www.gmail.com">Gmail</a></li>
+			<li class="topMenuItem menubarText"><a href="https://www.google.com/imghp">Images</a></li>
+			<li class="topMenuItem menubarIco"><span title="Google Apps"><img src="img/apps.png"/></span></li>
+			<li class="topMenuItem menubarIco"><span title="Google Notifications"><img src="img/bell.png"/></span></li>
+			<li class="topMenuItem"><span title="Google Account: Novneet Nov"><img src="img/account.png"/></span></li>
+		</ul>
+	</div>
+
+	<div class="clear"></div>
+
+	<div id="content">
+		<div id="centreArea">
+			<div id="centerLogo">
+				<img src="img/logo.png"></img>
+			</div>
+			<br/>
+			<input type="text" name="search" id="search" placeholder='Say "Ok Google"'><br/>
+			<div id="btnDiv">
+				<button type="submit" class="btnSearch" style="float:left">Google Search</button>
+				<button type="submit" class="btnSearch" style="float:right">I'm Feeling Lucky</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
+	<div id="footer">
+		<div id="leftFooterDiv">
+			<ul id="leftFooterMenu">
+				<li><a href="https://www.google.com/intl/en/ads/">Advertising</a></li>
+				<li><a href="https://www.google.com/services/">Business</a></li>
+				<li><a href="https://www.google.com/intl/en/about/">About</a></li>
+			</ul>
+		</div>
+		<div id="rightFooterDiv">
+			<ul id="rightFooterMenu">
+				<li><a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a></li>
+				<li><a href="https://www.google.com/intl/en/policies/terms">Terms</a></li>
+				<li><a href="">Settings</a></li>
+				<li><a href="https://www.google.co.in/">Use Google.co.in</a></li>
+			</ul>
+	
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

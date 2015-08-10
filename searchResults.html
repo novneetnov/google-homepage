@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		html, body{
+			margin:0px;
+			height: 100%;
+		}
+		#container{
+			height: 100%;
+		}
+		#topbar{
+			width: 100%;
+			height: 59px;
+			background-color: #F1F1F1;
+			border-bottom: 1px solid #E5E5E5;
+		}
+		#topMenuLeft{
+			padding: 16px 0px 0px 15px;
+		}
+		#logo{
+			width: 90px;
+			float: left;
+		}
+		#topMenuRight{
+			float: right;
+			margin: 0px 22px 0px 0px;
+			padding: 0p#F1F1F1;
+		}
+
+		#search{
+			float: left;
+			display: block;
+			width: 43.8%;
+			height: 28px;
+			margin-left: 20px;
+			font-family: sans-serif;
+			font-size: 15px;
+			border: 1px solid #dcdcdc;
+			padding: 0px 10px 0px 10px;
+			background-image: url(img/mic.png);
+			background-repeat: no-repeat;
+			background-position: 99.2% 50%;
+			-webkit-transition: all 0s ease-in-out;
+			-moz-transition: all 0s ease-in-out;
+			-ms-transition: all 0s ease-in-out;
+			-o-transition: all 0s ease-in-out;
+		}
+		input[type="text"]:hover{
+			outline: #a0a0a0 solid 1px;
+		}
+		input[type="text"]:focus{
+			box-shadow: 0px 0px 1px 1px #4d90fe;
+			outline: none;
+		}
+		#btnSearch{
+			float: left;
+			height: 30px;
+			width: 60px;
+			background-color: #4286F4;
+			padding: 0px;
+			border: none;
+			border-radius: 0px 2px 2px 0px;
+		}
+		#btnSearch img{
+			position: relative;
+			top: 2px;
+		}
+		a{
+			text-decoration:none;
+			color: black;
+		}	
+		a:hover{
+			text-decoration:underline;	
+		}
+		#topMenuRight li{
+			list-style: none;
+			display: inline;
+			font-size: 0.96em;
+			padding:0px 6px 0px 6px;
+			height: 50%;
+		}
+		.topMenuItem{
+			position: relative;
+			top: -3px;
+		}
+		.menubarText{
+			opacity: 0.80;
+			position: relative;
+			top: -16px;
+			right: -2px;			
+		}
+		.menubarIco{
+			position: relative;
+			top: -8px;
+			right: -2px;
+		}
+		.clear{
+			clear: both;
+		}
+		#contentHeader{
+			margin: 0px;
+			padding: 0px;
+			height: 59px;
+			border-bottom: 1px solid #E5E5E5;
+		}
+		#contentHeader ul{
+			margin: 21px 0px 0px 123px;
+			padding:0px;
+			float: left;
+			opacity: 0.8;
+			font-size: 0.85em;
+		}
+		#contentHeader ul li{
+			list-style: none;
+			display: inline;
+			padding: 0px 10px 0px 10px;
+			font-family: arial,sans-serif
+		}
+		#contentHeader ul li a{
+			display: inline-block;
+			padding: 0px 5px 20px 5px;
+		}
+		#contentHeader ul li a:hover{
+			text-decoration:none;
+		}
+		.selected{
+			color: #bc3d2f;
+			font-weight: bold;
+			opacity: 1.0;
+			border-bottom: 3px solid #bc3d2f;
+		}
+		#resultsMeta{
+			margin: 13px 0px 0px 135px;
+			font-size: 0.90em;
+			opacity: 0.72;
+		}
+		.searchResult{
+			margin: 22px 0px 24px 135px;
+		}
+		.searchResult a{
+			color: #1A0DB0;
+			font-size: 1.3em;
+			font-family: arial,sans-serif;
+		}
+		.searchResult p{
+			font-family: arial,sans-serif;
+			font-size: 0.9em;
+			margin: 1px 0px 2px 0px;
+		}
+		.green{
+			color: green;
+		}
+		hr{
+			margin: 0px 0px 0px 120px;
+			color: red;
+		}
+		#footer{
+			height: 83px;
+			background-color: #F2F2F2;
+			border-top: 1px solid #E5E5E5;
+		}
+		#footer div p{
+			font-family: arial,sans-serif;
+			font-size: 0.8em;
+			float: left;
+			margin: 0px;
+			color: #aaa;
+		}
+		#location{
+			padding: 20px 0px 0px 135px;	
+		}
+		#footer div p a{
+			opacity: 0.70;
+		}
+		#footer div p a:hover{
+			text-decoration:none;
+			opacity: 1.0;
+			color:black;
+		}
+		#footerMenu{
+			margin: 0px;
+			padding: 18px 0px 0px 120px;
+		}
+		
+		#footerMenu li{
+			list-style: none;
+			display: inline-block;
+			padding: 0px 15px 0px 15px;
+			font-size: 0.92em;
+		}
+		#footerMenu li a{
+			color: #777;
+		}
+		#footerMenu li a:hover{
+			color: black;
+			text-decoration:none;
+		}
+		#searchNextPage img{
+			padding: 35px 0px 30px 295px;
+		}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id="topbar">
+		<div id="topMenuLeft">
+			<img id="logo" src="img/logo.png"></img>
+			<input type="text" name="search" id="search">
+			<button type="submit" id="btnSearch"><img src="img/search.png"></img></button>
+		</div>
+		<ul id="topMenuRight">
+			<li class="topMenuItem menubarText" style="opacity: 0.6"><span title="Looking for Google+?Click the Googel Apps Icon to the Right.">novneet<span></li>
+			<li class="topMenuItem menubarIco"><span title="Google Apps"><img src="img/apps2.png"/></span></li>
+			<li class="topMenuItem menubarIco"><span title="Google Notifications"><img src="img/bell2.png"/></span></li>
+			<li class="topMenuItem"><span title="Google Account: Novneet Nov"><img src="img/account2.png"/></span></li>			
+		</ul>
+	</div>
+	<div class="clear"></div>
+
+	<div id="content">
+		<div id="contentHeader">
+			<ul>
+				<li><a class="selected" href="">Web</a></li>
+				<li><a href="">Images</a></li>
+				<li><a href="">Videos</a></li>
+				<li><a href="">News</a></li>
+				<li><a href="">More</a></li>
+				<li><a href="">Search Tools</a></li>
+			</ul>
+		</div>
+		<div id="contentBody">
+			<p id="resultsMeta">About 3,76,000 results (0.39 seconds)</p>
+			<div class="searchResult">
+				<a href="">Google Search Result 1</a>
+				<p class="green">www.website1.com/link1/link2/link3/link4/link5</p>
+				<p>Description description description</p>
+				<p>Description description description</p>
+			</div>
+				<div class="searchResult">
+				<a href="">Google Search Result 2</a>
+				<p class="green">www.website2.com/link1/link2/link3/link4/link5</p>
+				<p>Description description description description description</p>
+				<p>Description description description description description</p>
+			</div>
+			<div class="searchResult">
+				<a href="">Google Search Result 3</a>
+				<p class="green">www.website3.com/link1/link2/link3/link4/link5</p>
+				<p>Description description description description description</p>
+				<p>Description description description description description</p>
+			</div>
+			<div class="searchResult">
+				<a href="">Google Search Result 4</a>
+				<p class="green">www.website4.com/link1/link2/link3/link4/link5</p>
+				<p>Description description description description description</p>
+				<p>Description description description description description</p>	
+			</div>
+			<div class="searchResult">
+				<a href="">Google Search Result 5</a>
+				<p class="green">www.website5.com/link1/link2/link3/link4/link5</p>
+				<p>Description description description description description</p>
+				<p>Description description description description description</p>
+			</div>
+			<div class="searchResult">
+				<a href="">Google Search Result 6</a>
+				<p class="green">www.website6.com/link1/link2/link3/link4/link5</p>
+				<p>Description description description description description</p>
+				<p>Description description description description description</p>			
+			</div>
+			<div class="searchResult">
+				<a href="">Google Search Result 7</a>
+				<p class="green">www.website7.com/link1/link2/link3/link4/link5</p>
+				<p>Description description description description description</p>
+				<p>Description description description description description</p>			
+			</div>
+			<div class="searchResult">
+				<a href="">Google Search Result 8</a>
+				<p class="green">www.website8.com/link1/link2/link3/link4/link5</p>
+				<p>Description description description description description</p>
+				<p>Description description description description description</p>		
+			</div>
+			<div class="searchResult">
+				<a href="">Google Search Result 9</a>
+				<p class="green">www.website9.com/link1/link2/link3/link4/link5</p>
+				<p>Description description description description description</p>
+				<p>Description description description description description</p>			
+			</div>
+			<div class="searchResult">
+				<a href="">Google Search Result 10</a>
+				<p class="green">www.website10.com/link1/link2/link3/link4/link5</p>
+				<p>Description description description description description</p>
+				<p>Description description description description description</p>		
+			</div>
+		</div>
+		<hr width="40%" style="margin-left">
+		<div id="searchNextPage">
+			<img src="img/goooooogle.png" />	
+		</div>
+	</div>
+
+	<div id="footer">
+		<div id="location">
+			<p>Acharya Vihar, Bhubaneshwar, Odisha - Reported by this computer  - </p>
+			<p><a href="">&nbsp Use precise location - </a></p>
+			<p><a href="">&nbsp Learn more</a></p>	
+		</div>
+		<div class="clear"></div>
+		<div id="footerMenuDiv">
+			<ul id="footerMenu">
+				<li><a href="">Help</a></li>
+				<li><a href="">Send feedback</a></li>
+				<li><a href="">Privacy</a></li>
+				<li><a href="">Terms</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>
